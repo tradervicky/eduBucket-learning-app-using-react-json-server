@@ -1,0 +1,72 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "name": "vicky",
+      "email": "vicky@test.in",
+      "password": "test"
+    },
+    {
+      "name": "Abhijit pramanick",
+      "email": "abhi@test.in",
+      "password": "test",
+      "id": 2
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "tonystark Panday",
+      "email": "tonystark@teacher.in"
+    },
+    {
+      "id": 2,
+      "name": "Reynold Mishra",
+      "email": "Reynold@teacher.in"
+    },
+    {
+      "id": 3,
+      "name": "jennifer Kumari",
+      "email": "jennifer@teacher.in"
+    },
+    {
+      "id": 4,
+      "name": "Emma Devi",
+      "email": "Emma@teacher.in"
+    },
+    {
+      "id": 5,
+      "name": "Leonardo Tiwari",
+      "email": "Leonardo@teacher.in"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "vicky",
+      "email": "vicky@test.in",
+      "enrolled": "javascript"
+    },
+    {
+      "id": 2,
+      "name": "Sandeep",
+      "email": "sandeep@test.in",
+      "enrolled": "React- Redux"
+    },
+    {
+      "id": 3,
+      "name": "Ranjeet",
+      "email": "ranjeet@test.in",
+      "enrolled": "Python"
+    },
+    {
+      "id": 4,
+      "name": "Neha",
+      "email": "neha@test.in",
+      "enrolled": "Java Springboot"
+    }
+  ],
+  "courses": [
+    {}
+  ]
+}

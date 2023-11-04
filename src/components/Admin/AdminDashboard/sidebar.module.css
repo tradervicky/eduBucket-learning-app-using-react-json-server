@@ -1,0 +1,29 @@
+.sidebar{
+    height: 100vh;
+    width: 200px;
+    background-color: #6674cc;
+    display: flex;
+    
+    
+}
+.componentList{
+    padding: 10px;
+
+}
+.componentList ul{
+    list-style: none;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.componentList ul li{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+.componentList ul li:hover{ 
+    color: blue;
+}
+

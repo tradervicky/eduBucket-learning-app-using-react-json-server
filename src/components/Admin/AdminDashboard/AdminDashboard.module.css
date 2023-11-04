@@ -1,0 +1,27 @@
+.dashboard2{
+    height: 100vh;
+}
+.navbar2{
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    gap: 500px;
+    align-items: center;
+}
+
+
+.icon{
+    padding: 10px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon img{
+    width: 100px;
+    border-radius: 8px;
+}
+h1{
+    font-size: 45px;
+    font-weight: bold;
+}
