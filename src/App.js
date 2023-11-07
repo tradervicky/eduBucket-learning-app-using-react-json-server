@@ -11,9 +11,11 @@ import CoursesCreate from './components/Admin/AdminDashboard/CoursesCrud/Courses
 import AdminLogin from './components/Admin/LoginRegister/Adminlogin';
 import TeacherCreate from './components/Admin/Teachers/TeacherCrud/TeacherCreate';
 import TeacherUpdate from './components/Admin/Teachers/TeacherCrud/TeacherUdate';
+import EnrolledCourses from './components/StudentUser/EnrolledCourse/EnrolledCourses';
 import Enroll from './components/StudentUser/Enrollment Page/Enroll';
 import HomePage from './components/StudentUser/Homepage/HomePage';
 import StudentLogin from './components/StudentUser/StudentLoginRegister/StudentLogin';
+import WatchPage from './components/StudentUser/WatchPage/WatchPage';
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
         <Route path='/course-video-update' element={<CourseVideosUpdate/>}/>
         <Route path='/student-login' element={<StudentLogin/>}/>
         <Route path='/enroll-course' element={<Enroll/>}/>
+        <Route path='/enrolled-courses' element={<EnrolledCourses/>}/>
+        <Route path='/watch-page' element={<WatchPage/>}/>
 
       </Routes>
       </BrowserRouter>

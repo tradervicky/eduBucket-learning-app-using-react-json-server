@@ -2,36 +2,47 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Enroll.module.css';
 
 function Enroll() {
     const [searchParams] = useSearchParams();
     const courseId = parseInt(searchParams.get("cId"));
     const [coueseData, setCourseData] = useState([]);
-
+    const studentId = parseInt(searchParams.get("sid"));
+    const [studentData, setStudentData] = useState([]);
+    const navigate = useNavigate();
     useEffect(()=>{
         fetchCourseData();
+        fetchStudentData();
     },[])
-
+    const fetchStudentData =async ()=>{
+        try{
+            const response = await axios.get(`http://localhost:8080/students/${studentId}`)
+            setStudentData(response?.data)
+        }catch(error){
+            console.log(error)
+        }
+    }
     const fetchCourseData = async()=>{
         try{
             const response = await axios.get(`http://localhost:8080/courses/${courseId}`)
             setCourseData(response?.data)
-            
         }catch(error){
             console.error(error)
         }
     }
     const clickhandle =async  ()=>{
         try {
-          await  axios.put(` http://localhost:8080/students/`,{
-            
-          })
+        const updatedCourses = [...studentData.enrolled, coueseData.course]; 
+        const updatedData = { ...studentData, enrolled: updatedCourses };
+        await axios.put(`http://localhost:8080/students/${studentId}`, updatedData);
+        navigate(`/?sId=${studentId}`)
         }catch(error){
             console.error(error)
         }
     }
+    
     const getRandomNumber = () => {
         return Math.floor(Math.random() * 8) + 1;
     };

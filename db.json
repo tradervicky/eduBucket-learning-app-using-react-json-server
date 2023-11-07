@@ -45,35 +45,44 @@
       "id": 1,
       "name": "vicky",
       "email": "vicky@test.in",
-      "enrolled": "javascript",
+      "enrolled": [
+        "javascript"
+      ],
       "password": "test"
     },
     {
       "id": 2,
       "name": "Sandeep",
       "email": "sandeep@test.in",
-      "enrolled": "React- Redux",
+      "enrolled": [
+        "Javascript",
+        "Web Development"
+      ],
       "password": "test"
     },
     {
       "id": 3,
       "name": "Ranjeet",
       "email": "ranjeet@test.in",
-      "enrolled": "Python",
+      "enrolled": [
+        "Python"
+      ],
       "password": "test"
     },
     {
       "id": 4,
       "name": "Neha",
       "email": "neha@test.in",
-      "enrolled": "Java Springboot",
+      "enrolled": [
+        "Java Springboot"
+      ],
       "password": "test"
     },
     {
       "name": "Vicky Kumar Gupta",
       "email": "vickygupta031@gmail.com",
       "password": "test",
-      "enrolled": "",
+      "enrolled": ["Node js."],
       "id": 5
     }
   ],
@@ -103,8 +112,7 @@
     {
       "id": 1,
       "cid": 1,
-      "unitname": "Dom Manipulation",
-      "chapters": []
+      "unitname": "Dom Manipulation"
     },
     {
       "cid": 1,
@@ -142,13 +150,13 @@
       "cid": 1,
       "uid": 1,
       "chapter": "AJAX Calls",
-      "videoLink": "Bing",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356934/eduBucket/182592_720p_mvtl08.mp4",
       "id": 1
     },
     {
       "uid": "1",
       "chapter": "Dom Manipulation",
-      "videoLink": "google.com",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356933/eduBucket/135658_720p_vrt9tf.mp4",
       "cid": "1",
       "id": 2
     },

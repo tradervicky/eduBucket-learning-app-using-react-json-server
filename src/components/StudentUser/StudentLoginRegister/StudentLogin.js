@@ -45,7 +45,7 @@ const StudentLogin = () => {
           name: name,
           email: signUpEmail,
           password: signupPassword,
-          enrolled: ""
+          enrolled: []
 
         });
         setName("");
@@ -81,7 +81,7 @@ const StudentLogin = () => {
             console.log("Login successful");
             setLoginEmail("");
             setLoginPassword("");
-            navigate('/');
+            navigate(`/?sId=${user.id}`);
            
           } else {
             setError("Incorrect password");
@@ -95,7 +95,7 @@ const StudentLogin = () => {
     
   };
 
-  //fetch data for admin user
+  //fetch data for student user
   useEffect(()=>{
     fetchAdminLogin();
   },[])

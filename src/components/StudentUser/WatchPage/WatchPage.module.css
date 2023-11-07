@@ -1,0 +1,94 @@
+.FAQcomplete {
+    display: flex;
+    padding-bottom: 96px;
+    width: 1280px;
+    margin: 50px;
+  }
+  .FAQimg img {
+    padding-top: 20px;
+    width: 710px;
+    height: 576px;
+  }
+  .Faqque {
+    width: 532px;
+    margin-left: 50px;
+   
+  }
+ 
+  .Faqque h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    line-height: 72px;
+    color: rgb(36, 62, 99);
+    text-align: left;
+    padding-bottom: 25px;
+  }
+  .Faqque span {
+    color: rgb(100, 21, 255);
+  }
+  .Faqque p {
+    font-weight: 500;
+    color: rgb(124 139 161);
+    letter-spacing: 1.2px;
+    font-size: 18px;
+  
+  }
+  .Faqquep{
+    margin-bottom: 48px;
+  
+  }
+  .faqqueheading h3 {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(36, 62, 99);
+  }
+  .faqqueheading {
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+  .plusminus{
+    cursor: pointer;
+  }
+  .plusminus img{
+    width: 16px;
+    margin-left: 20px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #6415ff;
+    padding: 4px;
+    color: white;
+  }
+  
+  
+  /* for tablet  */
+  
+  @media (min-width: 376px) and (max-width: 912px) {
+    .FAQcomplete {
+      width: 912px;
+      margin-left: 80px;
+    }
+    .FAQimg {
+      display: none;
+    }
+    .Faqque {
+      text-align: center;
+    }
+  }
+  
+  /* Media query For mobile  */
+  @media (max-width: 375px) {
+    .FAQcomplete {
+      width: 375px;
+    }
+    .Faqque {
+      text-align: center;
+      width: 350px;
+    }
+    .FAQimg {
+      display: none;
+    }
+  }
+  

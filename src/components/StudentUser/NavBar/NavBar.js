@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from './NavBar.module.css';
 import { FaRegCircleUser } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 function NavBar() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const sId = parseInt(searchParams.get("sId"));
+  const handleClick = ()=>{
+    navigate(`/enrolled-courses?sId=${sId}`)
+  }
   return (
     <div className={styles.mainNav} >
         
@@ -16,7 +22,7 @@ function NavBar() {
                 <li>Services</li>
                 <li>Contact Us</li>
                 <li>Our Teachers</li>
-                <li>Enrolled Courses</li>
+                <li onClick={handleClick}>Enrolled Courses</li>
             </ul>
         </div>
         <div className={styles.navbtn}>

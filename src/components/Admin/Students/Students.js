@@ -16,7 +16,7 @@ function Students() {
       console.error(error)
     } 
   }
-console.log(data)
+
   return (
     <div className={styles.container}>
         <div className={styles.heading}>
