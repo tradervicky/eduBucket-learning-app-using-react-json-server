@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Inter&family=Montserrat:wght@200&family=Playfair+Display:ital@1&family=Poiret+One&family=Poppins:wght@200;300;400;500&family=Roboto:wght@100;300;400;500;700&display=swap');
+.hero{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    justify-content: space-between;
+}
+
+.text{
+    padding: 35px;
+    width: 60%;
+    
+   
+}
+.text h1{
+    color: rgb(57, 39, 124);
+    font-size: 50px;
+    font-family: 'Heebo', sans-serif;
+}
+.text p{
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #838487;
+    align-items: center;
+}
+.image{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(255,255,255,1) 70%);
+}
+.star{
+    text-align: center;
+}
+.star span{
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #838487;
+    align-items: center;
+}
+.icon{
+    padding-right:5px;
+    color: black;
+}

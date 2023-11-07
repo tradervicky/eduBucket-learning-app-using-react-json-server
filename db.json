@@ -15,9 +15,9 @@
   ],
   "teachers": [
     {
-      "id": 1,
-      "name": "tonystark Panday",
-      "email": "tonystark@teacher.in"
+      "name": "Tonystark Panday",
+      "email": "tonystark@teacher.in",
+      "id": 1
     },
     {
       "id": 2,
@@ -26,13 +26,13 @@
     },
     {
       "id": 3,
-      "name": "jennifer Kumari",
+      "name": "Jennifer Kumari",
       "email": "jennifer@teacher.in"
     },
     {
-      "id": 4,
-      "name": "Emma Devi",
-      "email": "Emma@teacher.in"
+      "name": "Emma Singh",
+      "email": "Emma@teacher.in",
+      "id": 4
     },
     {
       "id": 5,
@@ -45,28 +45,126 @@
       "id": 1,
       "name": "vicky",
       "email": "vicky@test.in",
-      "enrolled": "javascript"
+      "enrolled": "javascript",
+      "password": "test"
     },
     {
       "id": 2,
       "name": "Sandeep",
       "email": "sandeep@test.in",
-      "enrolled": "React- Redux"
+      "enrolled": "React- Redux",
+      "password": "test"
     },
     {
       "id": 3,
       "name": "Ranjeet",
       "email": "ranjeet@test.in",
-      "enrolled": "Python"
+      "enrolled": "Python",
+      "password": "test"
     },
     {
       "id": 4,
       "name": "Neha",
       "email": "neha@test.in",
-      "enrolled": "Java Springboot"
+      "enrolled": "Java Springboot",
+      "password": "test"
+    },
+    {
+      "name": "Vicky Kumar Gupta",
+      "email": "vickygupta031@gmail.com",
+      "password": "test",
+      "enrolled": "",
+      "id": 5
     }
   ],
   "courses": [
-    {}
+    {
+      "course": "Javascript",
+      "educator": "Alfred Shukla",
+      "id": 1
+    },
+    {
+      "course": "C++",
+      "educator": "Diana Lee",
+      "id": 2
+    },
+    {
+      "course": "Web Development",
+      "educator": "Jhonothan Pashwan",
+      "id": 3
+    },
+    {
+      "course": "Python",
+      "educator": "Lalu Yadav",
+      "id": 4
+    }
+  ],
+  "units": [
+    {
+      "id": 1,
+      "cid": 1,
+      "unitname": "Dom Manipulation",
+      "chapters": []
+    },
+    {
+      "cid": 1,
+      "unitname": "AJAX basics",
+      "id": 2
+    },
+    {
+      "cid": 1,
+      "unitname": "Event Listner",
+      "id": 3
+    },
+    {
+      "cid": "1",
+      "unitname": "JavaScript Fundamentals.",
+      "id": 5
+    },
+    {
+      "cid": "4",
+      "unitname": "List",
+      "id": 6
+    },
+    {
+      "cid": 3,
+      "unitname": "web scrapping",
+      "id": 7
+    },
+    {
+      "cid": 2,
+      "unitname": "STL",
+      "id": 8
+    }
+  ],
+  "chapters": [
+    {
+      "cid": 1,
+      "uid": 1,
+      "chapter": "AJAX Calls",
+      "videoLink": "Bing",
+      "id": 1
+    },
+    {
+      "uid": "1",
+      "chapter": "Dom Manipulation",
+      "videoLink": "google.com",
+      "cid": "1",
+      "id": 2
+    },
+    {
+      "uid": "6",
+      "chapter": "Array",
+      "videoLink": "array.com",
+      "cid": "4",
+      "id": 3
+    },
+    {
+      "uid": 8,
+      "chapter": "STL Basics",
+      "videoLink": "stl.in",
+      "cid": 2,
+      "id": 4
+    }
   ]
 }

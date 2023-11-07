@@ -1,0 +1,61 @@
+.CardContainer{
+    margin-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 50px;
+}
+.CardContainer h1{
+    font-size: 45px;
+    text-align: center;
+}
+.allCards{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 16px;
+}
+
+.card{
+    width: 320px;
+    margin-bottom: 30px;
+    /* border: 1px solid black; */
+    padding-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.img{
+    width: 320px;
+}
+.img img{
+    width: 320px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+.Coursename{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+.Coursename h3{
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.Coursename h3:hover{
+   color: blue;
+}
+
+#para{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+    
+}
+.TeacherName{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}

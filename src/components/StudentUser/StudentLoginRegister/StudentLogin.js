@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
-const AdminLogin = () => {
+const StudentLogin = () => {
   const [isLogin, setIsLogin] = useState(true);
   //states for signUp
   const [name, setName] = useState("");
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-  const [signupConfirmPassword, setSignupConfirmPassword] = useState("");
   //states for Login in admin panel
   const [loginEmail, setLoginEmail] = useState("");
   const [error, setError] = useState("");
@@ -32,28 +31,27 @@ const AdminLogin = () => {
   };
 // add data in db.json logic for signup
   const addData = async () => {
-    if (!name || !signUpEmail || !signupPassword || !signupConfirmPassword) {
+    if (!name || !signUpEmail || !signupPassword ) {
       setError("Please enter all details");
       return;
     }
 
-    if (signupPassword !== signupConfirmPassword) {
-      setError("Confirm Password doesn't match");
-      return;
-    }
+ 
 
-    if (name && signUpEmail && signupPassword && signupConfirmPassword) {
+    if (name && signUpEmail && signupPassword) {
       try {
-        const url = "http://localhost:8080/admin";
+        const url = "http://localhost:8080/students";
         const response = await axios.post(url, {
           name: name,
           email: signUpEmail,
           password: signupPassword,
+          enrolled: ""
+
         });
         setName("");
         setSignUpEmail("");
         setSignupPassword("");
-        setSignupConfirmPassword("");
+        
         setError(false)
         // update the new user data for login
         setLoginData((prevLoginData) => [...prevLoginData, { name, email: signUpEmail, password: signupPassword }]);
@@ -83,7 +81,7 @@ const AdminLogin = () => {
             console.log("Login successful");
             setLoginEmail("");
             setLoginPassword("");
-            navigate('/dashboard');
+            navigate('/');
            
           } else {
             setError("Incorrect password");
@@ -103,7 +101,7 @@ const AdminLogin = () => {
   },[])
   const fetchAdminLogin = async()=>{
     try{
-        const response =await axios.get("http://localhost:8080/admin")
+        const response =await axios.get("http://localhost:8080/students")
         setLoginData(response.data)
     }catch(error){
         console.error(error)
@@ -118,7 +116,7 @@ const AdminLogin = () => {
           <div className="form-container">
             <div className="title-text">
               <div className={`title ${isLogin ? 'login' : 'signup'}`}>
-                {isLogin ? 'Admin Login' : 'Admin Signup'}
+                {isLogin ? 'Student Login' : 'Student Signup'}
               </div>
             </div>
             <div className="slide-controls">
@@ -162,9 +160,7 @@ const AdminLogin = () => {
                     <div className="field">
                       <input type="password" placeholder="Password" required value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} />
                     </div>
-                    <div className="field">
-                      <input type="password" placeholder="Confirm Password" required value={signupConfirmPassword} onChange={(e) => setSignupConfirmPassword(e.target.value)} />
-                    </div>
+                    
                     <div className="field btn">
                       <div className="btn-layer"></div>
                       <input type="submit" value="Signup" onClick={signuphandleClick} />
@@ -189,4 +185,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default StudentLogin;

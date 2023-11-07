@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    
+}
+h2{
+    color: #0b4aaf;
+}
+.logicPart{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 85vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.CourseContent{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* input{
+    width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 16px;
+  font-family: poppins, sans-serif;
+} */
+.Educator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.educatorInput{
+display: flex;
+flex-direction: column;
+
+  gap: 15px;
+  
+
+}
+
+ input{
+    width: 80%;
+    padding: 8px;
+    font-size: 16x;
+    font-family: poppins, sans-serif;
+border-radius: 10px;
+  border: 1px solid lightgrey;
+}
+.unitInput{
+    width: 90%;
+}
+.unitEntry{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+}
+.chapterInput{
+    width: 90%;
+
+}
+.chapterInput input{
+    margin-bottom: 15px;
+}
+.CapterMain{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 90%;
+
+}
+
+.educatorInput{
+    display: flex;
+   flex-direction: column;
+   width: 90%;
+}
+
+.unitSelect {
+    font-family: poppins, sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 62%;
+    margin-right: 33%;
+    margin-left: 50px;
+    
+  }
+  
+  .unitSelect:hover {
+    border-color: #666;
+  }
+  
+  .unitSelect:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 0 1px #4d90fe;
+  }
+button{
+width: 150px;
+padding: 10px;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+font-weight: 500;
+color: white;
+background-color: #1b5fcc;
+
+}
+button:hover{
+    background-color: #4d90fe;
+}
+
+
+
+ 
