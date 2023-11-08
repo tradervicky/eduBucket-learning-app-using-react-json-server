@@ -9,6 +9,19 @@ function NavBar() {
   const handleClick = ()=>{
     navigate(`/enrolled-courses?sId=${sId}`)
   }
+
+  // log out details here 
+  const [showDropdown, setShowDropdown] = React.useState(false);
+  const isLoggedIn = localStorage.getItem('studentlogin') === 'true';
+
+  const handleSignOut = () => {
+    
+    localStorage.removeItem('studentlogin');
+    navigate('/'); 
+  };
+  const handleLogin = () => {
+    navigate('/student-login'); 
+  };
   return (
     <div className={styles.mainNav} >
         
@@ -30,7 +43,22 @@ function NavBar() {
             <button>search</button>
         </div>
         <div className={styles.userIcon}>
-       <Link to={'/student-login'}><FaRegCircleUser size={38} style={{cursor:"pointer", color:"rgb(100 21 255)"}}/></Link> 
+       <FaRegCircleUser size={38} style={{cursor:"pointer", color:"rgb(100 21 255)", display:"flex"}}
+        onClick={() => setShowDropdown(!showDropdown)}/>
+         {showDropdown && (
+            <div className={styles.dropdownContent}>
+              {isLoggedIn ? (
+                <>
+                  
+                  <p onClick={handleSignOut} style={{cursor:"pointer", color:"blue"}}>Sign Out</p>
+                </>
+              ) : (
+                <p onClick={handleLogin} style={{cursor:"pointer", color:"blue"}}>Login</p>
+              )}
+            </div>
+          )}
+        
+       
         </div>
         
     </div>

@@ -81,6 +81,7 @@ const AdminLogin = () => {
           if (user.password === loginPassword) {
             
             console.log("Login successful");
+            localStorage.setItem('adminlogin', true)
             setLoginEmail("");
             setLoginPassword("");
             navigate('/dashboard');

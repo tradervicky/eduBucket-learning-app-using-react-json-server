@@ -55,7 +55,7 @@ const teacherDelete = async (id) => {
     <td>{data.name}</td>
     <td>{data.email}</td>
     <td >
-        <AiFillEye size={24} style= {{ cursor:"pointer"}} />
+        
        <Link to={`/teacher-update?Id=${data.id}`}><BiEdit size={24} style={{color:"#6674cc" , cursor:"pointer"}} /></Link> 
         <AiOutlineDelete size={24} style={{color:"red" , cursor:"pointer"}} onClick={()=>teacherDelete(data.id)} />
     </td>

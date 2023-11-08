@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Adminprotected from './Adminprotected';
 import './App.css';
 import AdminDashbord from './components/Admin/AdminDashboard/AdminDashbord';
 import CourseChapterUpdate from './components/Admin/AdminDashboard/CoursesCrud/CourseRead/CourseDetails/Update/CourseChapterUpdate';
@@ -29,7 +30,7 @@ function App() {
         <Route path='/' element={<HomePage/>}/>       
         <Route path='/enrollment' element={<Enroll/>}/>       
         <Route path='/admin' element={<AdminLogin/>}/>
-        <Route path='/dashboard' element={<AdminDashbord/>}/>
+        <Route path='/dashboard' element={<Adminprotected component={AdminDashbord}/>}/>
         <Route path='/teacher-add' element={<TeacherCreate/>}/>
         <Route path='/teacher-update' element={<TeacherUpdate/>}/>
         <Route path='/course-create' element={<CoursesCreate/>}/>

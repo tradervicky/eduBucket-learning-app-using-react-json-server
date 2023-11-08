@@ -81,6 +81,7 @@ const StudentLogin = () => {
             console.log("Login successful");
             setLoginEmail("");
             setLoginPassword("");
+            localStorage.setItem('studentlogin', true)
             navigate(`/?sId=${user.id}`);
            
           } else {

@@ -2,7 +2,7 @@
   "admin": [
     {
       "id": 1,
-      "name": "vicky",
+      "name": "vicky Gupta",
       "email": "vicky@test.in",
       "password": "test"
     },
@@ -46,14 +46,17 @@
       "name": "vicky",
       "email": "vicky@test.in",
       "enrolled": [
-        "javascript"
+        "javascript",
+        "Spring Boot",
+        "Python",
+        "Javascript"
       ],
       "password": "test"
     },
     {
       "id": 2,
-      "name": "Sandeep",
-      "email": "sandeep@test.in",
+      "name": "vicky Gupta",
+      "email": "vicky@test.in",
       "enrolled": [
         "Javascript",
         "Web Development"
@@ -82,7 +85,9 @@
       "name": "Vicky Kumar Gupta",
       "email": "vickygupta031@gmail.com",
       "password": "test",
-      "enrolled": ["Node js."],
+      "enrolled": [
+        "Node js."
+      ],
       "id": 5
     }
   ],
@@ -106,6 +111,11 @@
       "course": "Python",
       "educator": "Lalu Yadav",
       "id": 4
+    },
+    {
+      "course": "Spring Boot",
+      "educator": "Code Bucket",
+      "id": 5
     }
   ],
   "units": [
@@ -143,6 +153,16 @@
       "cid": 2,
       "unitname": "STL",
       "id": 8
+    },
+    {
+      "cid": 5,
+      "unitname": "unit 1",
+      "id": 9
+    },
+    {
+      "cid": 5,
+      "unitname": "unit  2",
+      "id": 10
     }
   ],
   "chapters": [
@@ -173,6 +193,52 @@
       "videoLink": "stl.in",
       "cid": 2,
       "id": 4
+    },
+    {
+      "uid": 9,
+      "chapter": "chapter 1",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356825/eduBucket/186594_720p_e9yefe.mp4",
+      "cid": 5,
+      "id": 5
+    },
+    {
+      "uid": 9,
+      "chapter": "chapter 2",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356825/eduBucket/186686_720p_ws2a0g.mp4",
+      "cid": 5,
+      "id": 6
+    },
+    {
+      "uid": 10,
+      "chapter": "chapter 1",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356824/eduBucket/185096_360p_iwwexs.mp4",
+      "cid": 5,
+      "id": 7
+    },
+    {
+      "uid": 10,
+      "chapter": "chapter 2",
+      "videoLink": "https://res.cloudinary.com/ddfhmpnui/video/upload/v1699356824/eduBucket/185908_720p_lyroeo.mp4",
+      "cid": 5,
+      "id": 8
+    }
+  ],
+  "watchedVideo": [
+    {
+      "cid": 1,
+      "uid": 1,
+      "chapterid": 1,
+      "studentId": 1,
+      "id": 1
+    },
+    {
+      "cid": [
+        5
+      ],
+      "uid": 9,
+      "chapterId": 5,
+      "sid": 1,
+      "id": 2
     }
   ]
 }

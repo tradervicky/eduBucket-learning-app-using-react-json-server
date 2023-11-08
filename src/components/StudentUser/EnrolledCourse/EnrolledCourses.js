@@ -34,6 +34,17 @@ const showCourse = (id)=>{
 navigate(`/watch-page?sId=${sId}&cIndex=${id}`)
 }
 
+// Check if the user is logged in
+const isLoggedIn = localStorage.getItem('studentlogin');
+
+if (!isLoggedIn) {
+  return (
+    <div>
+      <p>Please login first and <span onClick={()=> navigate('/student-login')} style={{color:"blue", cursor:"pointer"}}>click here</span> </p>
+    </div>
+  );
+}
+
   return (
     <div className={styles.container}>
       <div className={styles.heading}>

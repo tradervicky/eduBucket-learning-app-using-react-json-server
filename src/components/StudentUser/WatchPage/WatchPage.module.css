@@ -91,4 +91,7 @@
       display: none;
     }
   }
+  .scroll{
+    overflow-y: scroll;
+  }
   

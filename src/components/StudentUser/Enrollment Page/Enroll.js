@@ -32,20 +32,35 @@ function Enroll() {
             console.error(error)
         }
     }
-    const clickhandle =async  ()=>{
-        try {
-        const updatedCourses = [...studentData.enrolled, coueseData.course]; 
-        const updatedData = { ...studentData, enrolled: updatedCourses };
-        await axios.put(`http://localhost:8080/students/${studentId}`, updatedData);
-        navigate(`/?sId=${studentId}`)
-        }catch(error){
-            console.error(error)
+
+
+    const isEnrolled = studentData.enrolled?.some((course) => course === coueseData.course);
+    // logic for if you have not loggined and click on buy course
+    const isLoggedIn = localStorage.getItem('studentlogin');
+    const clickhandle = async () => {
+      try {
+        if(!isLoggedIn){
+            navigate('/student-login')
         }
-    }
+        if (!isEnrolled) {
+          const updatedCourses = [...studentData.enrolled, coueseData.course];
+          const updatedData = { ...studentData, enrolled: updatedCourses };
+          await axios.put(`http://localhost:8080/students/${studentId}`, updatedData);
+          navigate(`/?sId=${studentId}`);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
     
     const getRandomNumber = () => {
         return Math.floor(Math.random() * 8) + 1;
     };
+
+   
+    if(!isLoggedIn){
+        
+    }
   return (
     <div className={styles.Enroll}>
         <div className={styles.courseAndDetail}>
@@ -62,7 +77,11 @@ function Enroll() {
                 <div className={styles.imageContainer}>
                     <img src={`/images/course/${getRandomNumber()}.jpg`} alt="" />
                 </div>
-                <button onClick={clickhandle}>Buy Now</button>
+               {isEnrolled ? (
+            <button disabled>Enrolled</button>
+          ) : (
+            <button onClick={clickhandle}>Buy Now</button>
+          )}
                 <div className={styles.Description}>
                     <h3>This Course Includes :</h3>
                     <ul>

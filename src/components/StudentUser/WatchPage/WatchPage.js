@@ -17,6 +17,9 @@ function WatchPage() {
     const sId = parseInt(searchParams.get("sId"));
     const cIndex = parseInt(searchParams.get("cIndex"));
 
+
+
+
     // fetch students 
     const fetchStudents = async () => {
         try {
@@ -43,6 +46,7 @@ function WatchPage() {
           setCourse(filteredCourse);
           const courseId = filteredCourse.map((dat) => dat.id); 
           fetchUnit(courseId); 
+          setCourseId(courseId)
         } catch (error) {
           console.error(error);
         }
@@ -71,7 +75,6 @@ function WatchPage() {
           const response = await axios.get(`http://localhost:8080/chapters`);
           const filteredChapters = response?.data.filter((data) => parseInt(data.cid) === courseId[0]);
           setChapter(filteredChapters);
-          console.log(filteredChapters);
         } catch (error) {
           console.error(error);
         }
@@ -96,6 +99,59 @@ function WatchPage() {
           fetchChapters(courseId);
         }
       }, [course]);
+//logic for playing video
+  // states for watch videos
+  const [courseId, setCourseId] = useState(0);
+  const [watched, setWatched] = useState(false);
+  const [uid, setUid] = useState(0);
+  const [chapterId, setChapterId] = useState(0);
+  
+  useEffect(() => {
+    const fetchChapters = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/chapters");
+        const filteredVideo = response?.data.find((vid) => vid.videoLink === currentVideo);
+        if (filteredVideo) {
+          setChapterId(filteredVideo.id);
+          setUid(filteredVideo.uid);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchChapters();
+  }, [currentVideo]);
+  
+  useEffect(() => {
+    const videoElement = document.querySelector('video');
+    const handleProgress = () => {
+      const percentagePlayed = (videoElement.currentTime / videoElement.duration) * 100;
+      if (percentagePlayed >= 30 && !watched) {
+        setWatched(true);
+        axios.post('http://localhost:8080/watchedVideo', {
+          cid: courseId,
+          uid: uid,
+          chapterId: chapterId,
+          sid: sId,
+        })
+        .then(response => {
+          console.log(response.data); // Log the response for debugging purposes
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      }
+    };
+    if (videoElement) {
+      videoElement.addEventListener('timeupdate', handleProgress);
+    }
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener('timeupdate', handleProgress);
+      }
+    };
+  }, [currentVideo, watched, courseId, uid, chapterId, sId]);
+      
   return (
     <div className={styles.FAQcomplete}>
         <div className={styles.FAQimg}>
@@ -106,11 +162,11 @@ function WatchPage() {
           <h1>Enrolled Course <span>{studentscourse}</span></h1>
           <p className={styles.Faqquep}>A comprehensive program that covers the fundamentals of data structures and algorithms. It includes lectures and exercises to help students design and implement efficient solutions. This course is suitable for beginners and experienced programmers and aims to prepare students for technical interviews and placement exams.</p>
           <h3>Course Material</h3>
-          
+          <div className={styles.scroll}>
           
           <ul>
       {unit.map((unitData) => (
-        <div key={unitData.id}>
+        <div key={unitData.id} >
           <div className={styles.Accordion}>
             <div
               className={styles.AccordionHeading}
@@ -129,13 +185,13 @@ function WatchPage() {
               <ul className={styles.AccordionContent}>
                 {chapter
                   .filter((chapterData) => parseInt(chapterData.uid) === unitData.id)
-                  .map((filteredChapter) => (
+                  .map((filteredChapter, index) => (
                     <li
                     style={{cursor: "pointer", color:"blue", textDecoration:"underline"}}
                       key={filteredChapter.id}
                       onClick={() => setCurrentVideo(filteredChapter.videoLink)}
                     >
-                      Chapter {filteredChapter.id}: {filteredChapter.chapter}
+                       {index+1}: {filteredChapter.chapter}
                     </li>
                   ))}
               </ul>
@@ -144,9 +200,7 @@ function WatchPage() {
         </div>
       ))}
     </ul>
-
-
-
+    </div>
 
         </div>
     </div>
